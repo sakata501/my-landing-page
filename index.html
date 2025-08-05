@@ -50,10 +50,10 @@
             align-items: center;
         }
 
-        .logo::before {
-            content: "🌍";
+        .logo-img {
+            height: 40px;
+            width: auto;
             margin-right: 10px;
-            font-size: 2rem;
         }
 
         .header-cta {
@@ -654,11 +654,15 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">輸出DX窓口</div>
+                <div class="logo">
+                    <img src="logo.png" alt="輸出DX窓口 ロゴ" class="logo-img">
+                    <span class="logo-text">輸出DX窓口</span>
+                </div>
                 <a href="#contact" class="header-cta">資料請求・お問い合わせ</a>
             </div>
         </div>
     </header>
+
 
     <!-- Hero Section -->
     <section class="hero">
@@ -751,12 +755,11 @@
             <p class="flow-subtitle">複雑な輸出プロセスを分かりやすく整理し、全体を管理します</p>
             
             <div class="flow-diagram">
-                <div class="flow-image-placeholder">
-                    📊 サービスフロー図を挿入してください
-                </div>
+                <img src="flow.png" alt="サービスフロー図" class="flow-image">
             </div>
         </div>
     </section>
+
 
     <!-- Services Section -->
     <section class="services">
@@ -886,25 +889,25 @@
         <div class="container">
             <h2 class="contact-title">資料請求・お問い合わせ</h2>
             <p class="contact-subtitle">サービスの詳細資料をお送りいたします。まずはお気軽にお問い合わせください。</p>
-            
+
             <form class="contact-form" data-netlify="true" name="export-dx-contact" method="POST">
                 <input type="hidden" name="form-name" value="export-dx-contact">
-                
+
                 <div class="form-group">
                     <label for="name">お名前 *</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="company">会社名・事業名 *</label>
                     <input type="text" id="company" name="company" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email">メールアドレス *</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-            
+
                 <div class="form-group">
                     <label for="inquiry_type">お問い合わせ種別 *</label>
                     <select id="inquiry_type" name="inquiry_type" required>
@@ -916,13 +919,13 @@
                         <option value="その他">その他</option>
                     </select>
                 </div>
-            
+
                 <!-- ✅ 追加部分ここから -->
                 <div class="form-group">
                     <label for="message">お問い合わせ内容 *</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-            
+
                 <div class="form-group">
                     <button type="submit" class="submit-button">送信する</button>
                 </div>
@@ -930,14 +933,14 @@
             </form>
         </div>
     </section>
-    
+
                     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const faqItems = document.querySelectorAll(".faq-item");
-    
+
         faqItems.forEach(item => {
             const question = item.querySelector(".faq-question");
-        
+
             question.addEventListener("click", () => {
                 item.classList.toggle("active");
             });
