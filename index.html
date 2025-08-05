@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>中小企業のための輸出DX窓口</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #0069d9;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #ffffff;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .cta-button {
+      background-color: #28a745;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .cta-button:hover {
+      background-color: #218838;
+    }
+    .contact-section {
+      background-color: #ffffff;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+    .contact-section h3 {
+      margin-bottom: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    input, textarea {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button[type="submit"] {
+      margin-top: 1.5rem;
+      background-color: #007bff;
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>輸出DX窓口</h1>
+    <p>中小企業のための、はじめての輸出をサポート</p>
+  </header>
+
+  <div class="hero">
+    <h2>輸出に関するお悩み、まとめてご相談ください</h2>
+    <p>
+      「海外に売ってみたいけど、やり方がわからない」<br />
+      「通関、契約、販路開拓……何から始めれば？」<br /><br />
+      私たちは、中小企業のはじめての輸出を<br />
+      一気通貫でサポートするDX窓口です。
+    </p>
+    <a href="#contact"><button class="cta-button">無料相談する</button></a>
+  </div>
+  <div class="contact-section" id="contact">
+    <h3>お問い合わせフォーム</h3>
+    <form method="POST" data-netlify="true" name="contact">
+  <input type="hidden" name="form-name" value="contact" />
+  
+  <label for="name">お名前</label>
+  <input type="text" id="name" name="name" required />
+
+  <label for="company">会社名</label>
+  <input type="text" id="company" name="company" />
+
+  <label for="email">メールアドレス</label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="message">ご相談内容</label>
+  <textarea id="message" name="message" rows="5" required></textarea>
+
+  <button type="submit">送信する</button>
+    </form>
+
+  </div>
+
+  <footer>
+    &copy; 2025 輸出DX窓口 | 中小企業の海外展開をサポート
+  </footer>
+</body>
+</html>
