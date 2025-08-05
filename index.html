@@ -1,138 +1,1020 @@
+/* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e3c72;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #f8f9ff;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .faq-toggle {
+            display: none;
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .faq-question:hover {
+            background: #e3f2fd;
+        }
+
+        .faq-question h3 {
+            color: #1e3c72;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .faq-question h3::before {
+            content: "Q. ";
+            color: #4a90e2;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .faq-question::after {
+            content: "+";
+            color: #4a90e2;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .faq-toggle:checked + .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 30px;
+        }
+
+        .faq-toggle:checked ~ .faq-answer {
+            max-height: 300px;
+            padding: 0 30px 25px 30px;
+        }
+
+        .faq-answer p {
+            color: #555;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .faq-answer p::before {
+            content: "A. ";
+            color: #4a90e2;
+            font-weight: bold;
+            margin-right: 8px;
+        }
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>中小企業のための輸出DX窓口</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background-color: #0069d9;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin-bottom: 0.5rem;
-    }
-    .hero {
-      text-align: center;
-      padding: 3rem 1rem;
-      background-color: #ffffff;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    .cta-button {
-      background-color: #28a745;
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    .cta-button:hover {
-      background-color: #218838;
-    }
-    .contact-section {
-      background-color: #ffffff;
-      padding: 2rem;
-      max-width: 600px;
-      margin: 2rem auto;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-    }
-    .contact-section h3 {
-      margin-bottom: 1rem;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    label {
-      margin-top: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    input, textarea {
-      padding: 0.8rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button[type="submit"] {
-      margin-top: 1.5rem;
-      background-color: #007bff;
-      color: white;
-      padding: 1rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button[type="submit"]:hover {
-      background-color: #0056b3;
-    }
-    footer {
-      background-color: #343a40;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>輸出DX窓口 | 中小企業の海外進出を支援</title>
+    <meta name="description" content="中小企業・個人事業主の海外市場進出を支援。輸出プロセスをデジタル化し、手軽で確実な海外展開を実現します。">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic Medium', Meiryo, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo::before {
+            content: "🌍";
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .header-cta {
+            background: #4a90e2;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74,144,226,0.3);
+        }
+
+        .header-cta:hover {
+            background: #357abd;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74,144,226,0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(74,144,226,0.3);
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(74,144,226,0.4);
+        }
+
+        /* Challenges Section */
+        .challenges {
+            padding: 80px 0;
+            background: #f8f9ff;
+        }
+
+        .challenges-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e3c72;
+        }
+
+        .challenge-block {
+            margin-bottom: 60px;
+        }
+
+        .challenge-header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #5a6c7d 0%, #3d4f5d 100%);
+            color: white;
+            border-radius: 20px 20px 0 0;
+            margin-bottom: 0;
+        }
+
+        .challenge-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .challenge-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .challenge-content {
+            background: white;
+            padding: 40px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .challenge-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .challenge-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 5px solid #4a90e2;
+        }
+
+        .challenge-item::before {
+            content: "●";
+            color: #4a90e2;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .challenge-item span {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .challenge-arrow {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 3rem;
+            color: #4a90e2;
+        }
+
+        .challenge-result {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border-radius: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        /* Service Flow */
+        .service-flow {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .flow-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1e3c72;
+        }
+
+        .flow-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .flow-diagram {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .flow-image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px dashed #4a90e2;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3c72;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: #f8f9ff;
+        }
+
+        .services-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1e3c72;
+        }
+
+        .services-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1e3c72;
+        }
+
+        .service-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e3c72;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #f8f9ff;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e3f2fd;
+        }
+
+        .faq-question h3 {
+            color: #1e3c72;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .faq-toggle {
+            color: #4a90e2;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+            margin-left: 20px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 30px 25px 30px;
+        }
+
+        .faq-answer p {
+            color: #555;
+            line-height: 1.8;
+            margin: 0;
+        }
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .contact-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(45deg, #4a90e2, #357abd);
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(74,144,226,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-bottom: 20px;
+        }
+
+        .footer-company {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-info {
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .footer-copyright {
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .faq-title,
+            .contact-title {
+                font-size: 2rem;
+            }
+
+            .faq-question {
+                padding: 20px;
+            }
+
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+
+            .faq-answer {
+                padding: 0 20px;
+            }
+
+            .faq-toggle:checked ~ .faq-answer {
+                padding: 0 20px 20px 20px;
+            }
+
+            .challenge-content,
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .challenge-items {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                max-width: 500px;
+            }
+
+            .service-item {
+                padding: 30px 20px;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .challenges-title,
+            .services-title,
+            .flow-title,
+            .faq-title,
+            .contact-title {
+                font-size: 1.8rem;
+            }
+
+            .challenge-header h3 {
+                font-size: 1.5rem;
+            }
+
+            .challenge-item {
+                padding: 15px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .challenge-block,
+        .service-item {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Floating animation for hero */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-content {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>輸出DX窓口</h1>
-    <p>中小企業のための、はじめての輸出をサポート</p>
-  </header>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">輸出DX窓口</div>
+                <a href="#contact" class="header-cta">資料請求・お問い合わせ</a>
+            </div>
+        </div>
+    </header>
 
-  <div class="hero">
-    <h2>輸出に関するお悩み、まとめてご相談ください</h2>
-    <p>
-      「海外に売ってみたいけど、やり方がわからない」<br />
-      「通関、契約、販路開拓……何から始めれば？」<br /><br />
-      私たちは、中小企業のはじめての輸出を<br />
-      一気通貫でサポートするDX窓口です。
-    </p>
-    <a href="#contact"><button class="cta-button">無料相談する</button></a>
-  </div>
-  <div class="contact-section" id="contact">
-    <h3>お問い合わせフォーム</h3>
-   <form method="POST" data-netlify="true" name="contact" action="/thanks.html">
-  <input type="hidden" name="form-name" value="contact" />
-  
-  <label for="name">お名前</label>
-  <input type="text" id="name" name="name" required />
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>中小企業の海外進出を<br>デジタルで支援</h1>
+                <p class="hero-subtitle">複雑な輸出プロセスを見える化し、手軽で確実な海外展開を実現</p>
+                <a href="#contact" class="cta-button">資料請求・お問い合わせはこちら</a>
+            </div>
+        </div>
+    </section>
 
-  <label for="company">会社名</label>
-  <input type="text" id="company" name="company" />
+    <!-- Challenges Section -->
+    <section class="challenges">
+        <div class="container">
+            <h2 class="challenges-title">中小企業を取り巻く課題</h2>
+            
+            <div class="challenge-block">
+                <div class="challenge-header">
+                    <h3>🚨 グローバル展開の必要性</h3>
+                    <p>日本国内市場の縮小により、海外市場への進出が急務となっています</p>
+                </div>
+                <div class="challenge-content">
+                    <div class="challenge-items">
+                        <div class="challenge-item">
+                            <span>総人口の減少</span>
+                        </div>
+                        <div class="challenge-item">
+                            <span>少子高齢化</span>
+                        </div>
+                        <div class="challenge-item">
+                            <span>労働人口の減少</span>
+                        </div>
+                        <div class="challenge-item">
+                            <span>地方経済の衰退</span>
+                        </div>
+                        <div class="challenge-item">
+                            <span>人材不足による生産性低下</span>
+                        </div>
+                        <div class="challenge-item">
+                            <span>弱小フォワーダーの衰退</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <label for="email">メールアドレス</label>
-  <input type="email" id="email" name="email" required />
+            <div class="challenge-arrow">⬇️</div>
 
-  <label for="message">ご相談内容</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+            <div class="challenge-result">
+                海外市場への進出が生き残りの鍵
+            </div>
 
-  <button type="submit">送信する</button>
-    </form>
+            <div class="challenge-arrow">⬇️</div>
 
-  </div>
+            <div class="challenge-block">
+                <div class="challenge-header">
+                    <h3>❌ 新規輸出の難しさ</h3>
+                    <p>海外進出の必要性は理解していても、実際の輸出には多くの壁が存在します</p>
+                </div>
+                <div class="challenge-content">
+                    <div class="challenge-items">
+                        <div class="challenge-item">
+                            <span>販路開拓が難しい</span>
+                        </div>
+                        <div class="challenge-item">
+                            <span>どのフォワーダーや販路開拓サービスを選べば良いかがわからない</span>
+                        </div>
+                        <div class="challenge-item">
+                            <span>多言語の書類作成が難しい</span>
+                        </div>
+                        <div class="challenge-item">
+                            <span>輸出のプロセスが難しい</span>
+                        </div>
+                        <div class="challenge-item">
+                            <span>契約条件がわからない</span>
+                        </div>
+                        <div class="challenge-item">
+                            <span>フル代行サービスは高額</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    &copy; 2025 輸出DX窓口 | 中小企業の海外展開をサポート
-  </footer>
-</body>
-</html>
+    <!-- Service Flow Section -->
+    <section class="service-flow">
+        <div class="container">
+            <h2 class="flow-title">輸出DX窓口のサービスフロー</h2>
+            <p class="flow-subtitle">複雑な輸出プロセスを分かりやすく整理し、全体を管理します</p>
+            
+            <div class="flow-diagram">
+                <div class="flow-image-placeholder">
+                    📊 サービスフロー図を挿入してください
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="services-title">輸出DX窓口のサービス</h2>
+            <p class="services-subtitle">あなたの海外展開を成功に導く4つの支援</p>
+            
+            <div class="services-grid">
+                <div class="service-item">
+                    <span class="service-icon">🔍</span>
+                    <h3>最適パートナー情報提供</h3>
+                    <p>最適なフォワーダーや支援サービスの情報を、あなたの業種・商材に合わせて厳選してご提供</p>
+                </div>
+
+                <div class="service-item">
+                    <span class="service-icon">📝</span>
+                    <h3>多言語書類作成支援</h3>
+                    <p>輸出に必要な書類の作成を多言語でサポート。専門用語や契約条件も安心してお任せください</p>
+                </div>
+
+                <div class="service-item">
+                    <span class="service-icon">📈</span>
+                    <h3>プロセス見える化</h3>
+                    <p>複雑な輸出プロセスをステップごとに見える化。進捗状況がリアルタイムで把握できます</p>
+                </div>
+
+                <div class="service-item">
+                    <span class="service-icon">💰</span>
+                    <h3>手軽なクラウド型支援</h3>
+                    <p>フル代行より大幅にコストを抑制。必要な支援だけを選択できる柔軟な料金体系</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="faq-title">よくある質問</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>このサービスはどんな企業向けですか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>海外取引の経験がない、または限られている中小企業様向けです。初回輸出に必要な販路開拓、契約・通関・書類整備、発送までを一貫してサポートします。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>海外のバイヤーはどうやって見つけてくれるのですか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>マッチングプラットフォーム、海外展示会、越境EC連携、現地商社ネットワークなど複数のチャネルの中から御社の商材に合う販路を提案・マッチングします。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>英語が苦手ですが対応できますか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、商談の翻訳・通訳サポートから、契約書のレビュー、メール文面のテンプレートまで、英語に不安のある方でも進められる仕組みを用意しています。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>輸出に必要な書類は何ですか？サポートしてもらえますか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>インボイス、パッキングリスト、原産地証明書、輸出許可書類などが必要です。当サービスでは、業種・国別に最適化されたテンプレートと自動作成ツールで支援します。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>費用体系はどうなっていますか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>月額制と成功報酬型のプランをご用意しています。詳しくは資料請求をしてください。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>海外取引でトラブルが起きた場合の対応は？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>万一に備えて貿易保険の提案も可能です。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>初めての輸出で、何から始めたらよいかわかりません。</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>ご安心ください。オンボーディング支援機能を通じて、「最初の商談獲得まで」の具体的なステップをダッシュボードを見ながら進めることができます。</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>輸出が一度成功したあとも、継続して支援してもらえますか？</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>はい、再発注や継続取引に向けたサポート、販路の多角化、現地パートナーの探索まで継続的にサポートします。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="contact-title">資料請求・お問い合わせ</h2>
+            <p class="contact-subtitle">サービスの詳細資料をお送りいたします。まずはお気軽にお問い合わせください。</p>
+            
+            <form class="contact-form" data-netlify="true" name="export-dx-contact" method="POST">
+                <input type="hidden" name="form-name" value="export-dx-contact">
+                
+                <div class="form-group">
+                    <label for="name">お名前 *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">会社名・事業名 *</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">メールアドレス *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="inquiry_type">お問い合わせ種別 *</label>
+                    <select id="inquiry_type" name="inquiry_type" required>
+                        <option value="">選択してください</option>
+                        <option value="資料請求">資料請求</option>
+                        <option value="サービス詳細について">サービス詳細について</option>
+                        <option value="料金について">料金について</option>
+                        <option value="導入相談">導入相談</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
